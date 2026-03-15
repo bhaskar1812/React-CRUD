@@ -49,7 +49,6 @@ export default function Contacts() {
 
   const handleDelete = (itemToDelete) => {
     setData((prevItems) => prevItems.filter((item) => item !== itemToDelete));
-    console.log('item', itemToDelete);
   };
 
   const handleEdit = (itemToEdit, idx) => {
@@ -60,10 +59,7 @@ export default function Contacts() {
     setData((prev) =>
       prev.map((item, i) => (i === editIndex ? { ...contact } : item))
     );
-    console.log('item', itemToEdit);
   };
-
-  console.log(editIndex);
 
   return (
     <>
@@ -108,9 +104,6 @@ export default function Contacts() {
         <button type="submit">
           {editIndex === null ? 'Submit' : 'Update'}
         </button>
-        {/* <button onClick={() => handleUpdate} type="submit">
-          Update
-        </button> */}
       </form>
 
       <table border="1" cellPadding="6" style={{ marginTop: 12 }}>
